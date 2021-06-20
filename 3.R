@@ -1,19 +1,11 @@
 #3
-prime_numbers <- function(n) {
-  if (n >= 2) {
-    x = seq(2, n)
-    prime_nums = c()
-    for (i in seq(2, n)) {
-      if (any(x == i)) {
-        prime_nums = c(prime_nums, i)
-        x = c(x[(x %% i) != 0], i)
-      }
-    }
-    return(prime_nums)
-  }
-  else
-  {
-    stop("Input number should be at least 2.")
-  }
+pyramid<- function(max) {
+space <- max - 1
+for (i in 0:(max - 1)) {
+  for (j in 0:space) cat(" ")
+  for (j in 0:i) cat("* ")
+  cat("\n")
+  space <- space - 1
 }
-prime_numbers(12)
+}
+pyramid(5)

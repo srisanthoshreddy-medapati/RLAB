@@ -1,20 +1,16 @@
-
 #2
-num = as.integer(readline(prompt="Enter a number: "))
-flag = 0
-if(num > 1) {
-  flag = 1
-  for(i in 2:(num-1)) {
-    if ((num %% i) == 0) {
-      flag = 0
-      break
-    }
-  }
+binaryToDecimal<-function(n){
+dec_value = 0
+base = 1
+temp = n
+while(temp){
+  last_digit = temp%%10
+  temp = as.integer(temp / 10)
+  dec_value =dec_value+ last_digit * base
+  base = base * 2
+ }
+  return( dec_value)
 }
-if(num == 2)    flag = 1
-if(flag == 1) {
-  print(paste(num,"is a prime number"))
-} else {
-  print(paste(num,"is not a prime number"))
-}
-
+num = readline(prompt = "Input a binary number :");
+num = as.integer(num)
+cat("The decimal number :",binaryToDecimal(num));

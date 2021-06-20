@@ -1,12 +1,11 @@
 #7
-for (i in seq(1, 150)){
-  count = 0
-  for (j in seq(1, 150)){
-    if (i %% j == 0){
-      count = count + 1
-    }
-  }
-  if(count > 2){
-    print(i)
-  }
+
+num=as.integer(readline(prompt = "Enter the number :"))
+product=1
+while(num>0)
+{
+  x=num%%10
+  product=product*x
+  num=as.integer(num/10)
 }
+cat("The product of digits of",num,"is :",product)

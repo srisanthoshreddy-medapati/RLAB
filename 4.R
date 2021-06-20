@@ -1,13 +1,11 @@
 #4
-num = as.integer(readline(prompt="Enter a number: "))
-factorial = 1
-if(num < 0) {
-  print("Sorry, factorial does not exist for negative numbers")
-} else if(num == 0) {
-  print("The factorial of 0 is 1")
-} else {
-  for(i in 1:num) {
-    factorial = factorial * i
+pyramid<- function(max) {
+  space <- max - 1
+  for (i in 0:(max - 1)) {
+    for (j in 0:space) cat(" ")
+    for (j in 0:i) cat(i+1,"")
+    cat("\n")
+    space <- space - 1
   }
-  print(paste("The factorial of", num ,"is",factorial))
 }
+pyramid(5)
